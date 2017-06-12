@@ -5,7 +5,7 @@ import './index.css';
 
 ReactDOM.render(
   <div className="main-container">
-    <App />
+    <App locales={['es-AR']} />
   </div>,
   document.getElementById('root')
 );
