@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Moment from 'react-moment';
 import Button from 'muicss/lib/react/button';
 import Form from 'muicss/lib/react/form';
 import Input from 'muicss/lib/react/input';
@@ -82,7 +83,15 @@ class Post extends Component {
         <div className="App-cad-image">
           <div className="App-card-footer">
             <img className="App-card-avatar" src={avatar} />
-            <span>{this.state.data.user}</span>
+            <div className="post-user">
+              <div>
+                {this.state.data.user}
+              </div>
+              <div className="date">
+                <Moment fromNow ago>{this.state.data.date}</Moment>
+              </div>
+            </div>
+
           </div>
         </div>
 
@@ -98,7 +107,7 @@ class Post extends Component {
           {
             this.state.comments.map((obj, i) => (
               <Comment data={obj} key={i} />
-            ))
+            )).reverse()
           }
 
           <div>

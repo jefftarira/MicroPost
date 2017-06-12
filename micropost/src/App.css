@@ -134,8 +134,14 @@
   padding: 14px 20px;
 }
 
-.App-card-footer span{
-  padding-left: 10px;
+.App-card-footer .date{
+  font-size: 1.2rem;
+  color: rgba(0,0,0,.54);
+  text-align: left;
+}
+
+.post-user{
+  margin-left: 10px;
 }
 
 .App-card-avatar {
@@ -143,6 +149,7 @@
   height: 40px !important;
   border-radius: 50%;
   margin: 0;
+  
 }
 
 .margin-right{
