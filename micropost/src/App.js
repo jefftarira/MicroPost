@@ -15,14 +15,10 @@ class App extends Component {
       posts: [],
       message: '',
     };
-
-    // this.handleAuth = this.handleAuth.bind(this);
-    // this.handleLogout = this.handleLogout.bind(this);
-    // this.handleUpload = this.handleUpload.bind(this);
   }
 
   componentWillMount() {
-    fetch('http://ec2-107-21-68-24.compute-1.amazonaws.com:8080/post/list')
+    fetch('http://LB-micro-post-1475621456.us-east-1.elb.amazonaws.com:8080/post/list')
       .then((response) => response.json())
       .then((response) => {
         this.setState({ posts: response.posts });

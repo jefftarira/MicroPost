@@ -21,7 +21,6 @@ class Comment extends Component {
             <div className="date">
               <Moment fromNow ago>{this.state.data.date}</Moment>
             </div>
-
           </div>
           <div className="message-comment">
             {this.state.data.message}

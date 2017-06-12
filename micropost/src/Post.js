@@ -27,7 +27,7 @@ class Post extends Component {
   }
 
   loadComments() {
-    fetch(`http://ec2-204-236-205-91.compute-1.amazonaws.com:8080/comments/list?idPost=${this.state.data.id}`)
+    fetch(`http://LB-micro-comment-1884902263.us-east-1.elb.amazonaws.com:8080/comments/list?idPost=${this.state.data.id}`)
       .then((response) => response.json())
       .then((response) => {
         this.setState({ comments: response.comments, total: response.total });
@@ -51,14 +51,14 @@ class Post extends Component {
       user: this.state.user,
       message: this.state.comment,
     };
-    fetch('http://ec2-204-236-205-91.compute-1.amazonaws.com:8080/comments/list', {
+    fetch('http://LB-micro-comment-1884902263.us-east-1.elb.amazonaws.com:8080/comments/list', {
       method: 'POST',
       body: JSON.stringify(param),
     }).then(res => res.json())
       .then(res => {
         console.log(res);
         if (!res.error) {
-          fetch(`http://ec2-204-236-205-91.compute-1.amazonaws.com:8080/comments/list?idPost=${this.state.data.id}`)
+          fetch(`http://LB-micro-comment-1884902263.us-east-1.elb.amazonaws.com:8080/comments/list?idPost=${this.state.data.id}`)
             .then((response) => response.json())
             .then((response) => {
               console.log(response.comments);
@@ -96,8 +96,8 @@ class Post extends Component {
           <div className="total-comments">{this.state.total} comentarios</div>
 
           {
-            this.state.comments.map((obj, key) => (
-              <Comment data={obj} key={key} />
+            this.state.comments.map((obj, i) => (
+              <Comment data={obj} key={i} />
             ))
           }
 
