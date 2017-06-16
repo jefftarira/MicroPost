@@ -82,7 +82,7 @@ class App extends Component {
             <div className="post">
               <div className="App-button">
                 <Form className="form" onSubmit={this.handleSubmit} >
-                  {/* <legend>Publicar post</legend>*/ }
+                  {/* <legend>Publicar post</legend>*/}
                   <Textarea
                     hint="Escribe tu post aqui..."
                     name="message"
