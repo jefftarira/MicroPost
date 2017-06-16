@@ -5,7 +5,7 @@ import Form from 'muicss/lib/react/form';
 import Input from 'muicss/lib/react/input';
 import Comment from './Comment';
 import './Post.css';
-import avatar from './img/avatar04.png';
+import avatar from './img/user_post.png';
 
 class Post extends Component {
   constructor(props) {
@@ -103,10 +103,9 @@ class Post extends Component {
 
         <div className="content-comments">
           <div className="total-comments">{this.state.total} comentarios</div>
-
           {
             this.state.comments.map((obj, i) => (
-              <Comment data={obj} key={i} />
+              <Comment data={obj} key={i.toString()} />
             )).reverse()
           }
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Moment from 'react-moment';
 
-import avatar from './img/avatar5.png';
+import avatar from './img/comment_avatar.svg';
 
 class Comment extends Component {
   constructor(props) {

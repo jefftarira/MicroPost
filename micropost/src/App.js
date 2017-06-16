@@ -82,30 +82,33 @@ class App extends Component {
             <div className="post">
               <div className="App-button">
                 <Form className="form" onSubmit={this.handleSubmit} >
-                  <legend>Publicar post</legend>
-                  <Input
-                    label="Nombre"
-                    name="user"
-                    floatingLabel
-                    value={this.state.user}
-                    onChange={this.handleInputChange}
-                    required
-                  />
+                  {/* <legend>Publicar post</legend>*/ }
                   <Textarea
-                    hint="Escribe aqui"
+                    hint="Escribe tu post aqui..."
                     name="message"
                     value={this.state.message}
                     onChange={this.handleInputChange}
                     required
                   />
-                  <Button type="submit" color="danger" size="small">Publicar</Button>
+                  <div className="public-post">
+                    <Input
+                      className="margin-b-6"
+                      label="Nombre"
+                      name="user"
+                      floatingLabel
+                      value={this.state.user}
+                      onChange={this.handleInputChange}
+                      required
+                    />
+                    <Button type="submit" color="danger" size="small" >Publicar</Button>
+                  </div>
                 </Form>
               </div>
             </div>
 
             {
               this.state.posts.map((obj, i) => (
-                <Post data={obj} key={i} />
+                <Post data={obj} key={i.toString()} />
               ))
             }
           </div>
